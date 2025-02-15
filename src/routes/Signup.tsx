@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from './firebase';
+import { auth } from '../firebase';
 
 function Signup() {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,7 +18,8 @@ function Signup() {
         // Signed In
         const user = userCredential.user;
         console.log(user);
-        // Navigate to login
+        // Navigate to signin
+        navigate('/signin');
       })
       .catch((error) => {
         // Need to handle errors better
@@ -26,7 +30,7 @@ function Signup() {
   };
 
   return (
-    <section className='Signup'>
+    <main className='Signup'>
       <h1>Signup</h1>
       <form onSubmit={submitHandler}>
         <div>
@@ -51,7 +55,10 @@ function Signup() {
         </div>
         <button type='submit'>Sign Up</button>
       </form>
-    </section>
+      <p>
+        Already have an account? <NavLink to='/signin'>Sign in</NavLink>
+      </p>
+    </main>
   );
 }
 
