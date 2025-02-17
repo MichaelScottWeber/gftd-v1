@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function PasswordReset() {
+function PasswordReset({ userId }) {
   return (
     <main className='PasswordReset'>
       <h1>This is the Password Reset screen</h1>
