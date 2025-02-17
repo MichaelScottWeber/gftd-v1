@@ -4,7 +4,11 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import { NavLink, useNavigate } from 'react-router-dom';
 
-function Signin({ userId }) {
+type SigninProps = {
+  userId: string;
+};
+
+function Signin({ userId }: SigninProps) {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

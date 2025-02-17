@@ -4,7 +4,11 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 
-function Signup({ userId }) {
+type SignupProps = {
+  userId: string;
+};
+
+function Signup({ userId }: SignupProps) {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
@@ -19,7 +23,7 @@ function Signup({ userId }) {
         const user = userCredential.user;
         console.log(user);
         // Navigate to signin
-        navigate('/signin');
+        navigate('/');
       })
       .catch((error) => {
         // Need to handle errors better

@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
+import Navbar from './components/Navbar/Navbar';
 import Home from './routes/Home';
 import Signup from './routes/Signup';
 import Signin from './routes/Signin';
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Navbar userId={userId} />
       <Routes>
         <Route path='/' element={<Home userId={userId} />} />
         <Route path='/signup' element={<Signup userId={userId} />} />
