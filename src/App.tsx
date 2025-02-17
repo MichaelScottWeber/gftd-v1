@@ -32,7 +32,14 @@ function App() {
     <BrowserRouter>
       <Navbar userId={userId} />
       <Routes>
-        <Route path='/' element={<Home userId={userId} />} />
+        <Route
+          path='/'
+          element={
+            // Should I handle the redirect here? or in Home
+            <Home userId={userId} />
+            // userId ? <Home userId={userId} /> : <Signin userId={userId} />
+          }
+        />
         <Route path='/signup' element={<Signup userId={userId} />} />
         <Route path='/signin' element={<Signin userId={userId} />} />
         <Route

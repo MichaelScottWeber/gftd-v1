@@ -11,6 +11,11 @@ function Home({ userId }: HomeProps) {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Is it better to handle the redirect here? Or to do it in App.tsx
+    if (userId) {
+      navigate('/signin');
+    }
+
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties

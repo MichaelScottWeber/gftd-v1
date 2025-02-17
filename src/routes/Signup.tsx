@@ -14,7 +14,7 @@ function Signup({ userId }: SignupProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     await createUserWithEmailAndPassword(auth, email, password)
@@ -36,7 +36,7 @@ function Signup({ userId }: SignupProps) {
   return (
     <main className='Signup'>
       <h1>Signup</h1>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor='email-address'>Email Address</label>
           <input

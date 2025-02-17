@@ -13,7 +13,7 @@ function Signin({ userId }: SigninProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -32,7 +32,7 @@ function Signin({ userId }: SigninProps) {
   return (
     <main className='Signin'>
       <h1>Signin</h1>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor='email-address'>Email address</label>
           <input
