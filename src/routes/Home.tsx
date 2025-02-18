@@ -12,7 +12,7 @@ function Home({ userId }: HomeProps) {
 
   useEffect(() => {
     // Is it better to handle the redirect here? Or to do it in App.tsx
-    if (userId) {
+    if (!userId) {
       navigate('/signin');
     }
 
