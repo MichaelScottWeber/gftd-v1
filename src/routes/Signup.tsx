@@ -29,8 +29,10 @@ function Signup({ userId }: SignupProps) {
       .then((userId) => {
         addDoc(collection(db, 'users'), {
           id: userId,
-          firstName: firstName,
-          lastName: lastName,
+          name: {
+            first: firstName,
+            last: lastName,
+          },
           email: email,
           createdAt: new Date(),
         });
