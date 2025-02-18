@@ -58,6 +58,9 @@ function Signin({ userId }: SigninProps) {
         <button type='submit'>Sign In</button>
       </form>
       <p>
+        <NavLink to='/password-reset'>Forgot Password?</NavLink>
+      </p>
+      <p>
         No account yet? <NavLink to='/signup'>Sign up</NavLink>
       </p>
     </main>

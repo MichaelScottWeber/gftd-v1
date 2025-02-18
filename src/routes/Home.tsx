@@ -34,7 +34,7 @@ function Home({ userId }: HomeProps) {
 
   return (
     <main className='Home'>
-      <h1>This is the Home screen</h1>
+      <h1 className='text-3xl font-bold underline'>This is the Home screen</h1>
       {userId ? <p>Signed in as ID {userId}</p> : ''}
     </main>
   );
