@@ -49,16 +49,17 @@ function Signup() {
   };
 
   return (
-    <main className=''>
-      <h1>Signup</h1>
+    <main className='bg-gray-50 h-screen flex flex-col items-center p-8'>
+      <h1 className='text-gray-900 text-3xl pb-8'>Signup</h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
           signupUserAndAddToFirestore();
         }}
+        className='bg-white container max-w-screen-sm p-8 border border-gray-200 rounded-xl shadow-md'
       >
         {/* First Name */}
-        <div>
+        <div className='flex flex-col mb-5'>
           <label htmlFor='first-name'>First Name</label>
           <input
             type='text'
@@ -66,10 +67,11 @@ function Signup() {
             onChange={(e) => setFirstName(e.target.value)}
             required
             placeholder='First Name'
+            className='border border-gray-400 p-2 rounded-md'
           />
         </div>
         {/* Last Name */}
-        <div>
+        <div className='flex flex-col mb-5'>
           <label htmlFor='last-name'>Last Name</label>
           <input
             type='text'
@@ -77,10 +79,11 @@ function Signup() {
             onChange={(e) => setLastName(e.target.value)}
             required
             placeholder='Last Name'
+            className='border border-gray-400 p-2 rounded-md'
           />
         </div>
         {/* Email Address */}
-        <div>
+        <div className='flex flex-col mb-5'>
           <label htmlFor='email-address'>Email Address</label>
           <input
             type='email'
@@ -88,10 +91,11 @@ function Signup() {
             onChange={(e) => setEmail(e.target.value)}
             required
             placeholder='Email Address'
+            className='border border-gray-400 p-2 rounded-md'
           />
         </div>
         {/* Password */}
-        <div>
+        <div className='flex flex-col mb-5'>
           <label htmlFor='password'>Password</label>
           <input
             type='password'
@@ -99,13 +103,22 @@ function Signup() {
             onChange={(e) => setPassword(e.target.value)}
             required
             placeholder='Password'
+            className='border border-gray-400 p-2 rounded-md'
           />
         </div>
-        <button type='submit'>Sign Up</button>
+        <button
+          className='px-6 py-2 bg-green-700 rounded-md text-white mb-5 cursor-pointer'
+          type='submit'
+        >
+          Sign Up
+        </button>
+        <p>
+          Already have an account?{' '}
+          <NavLink className='text-blue-500' to='/signin'>
+            Sign in
+          </NavLink>
+        </p>
       </form>
-      <p>
-        Already have an account? <NavLink to='/signin'>Sign in</NavLink>
-      </p>
     </main>
   );
 }
