@@ -24,7 +24,7 @@ function Navbar({ userId }: NavbarProps) {
   };
 
   return (
-    <nav className='Navbar'>
+    <nav className='relative h-20 flex items-center justify-between border-b-1 border-gray-200 shadow-md p-7 text-gray-800 text-base'>
       <span>gftd</span>
       {userId ? <button onClick={handleSignout}>Sign Out</button> : ''}
     </nav>

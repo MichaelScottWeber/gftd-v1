@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import { NavLink, useNavigate } from 'react-router';
 
-type PasswordResetProps = {
-  userId: string;
-};
+// type PasswordResetProps = {
+//   userId: string;
+// };
 
-function PasswordReset({ userId }: PasswordResetProps) {
+// function PasswordReset({ userId }: PasswordResetProps) {
+function PasswordReset() {
   const auth = getAuth();
   // const navigate = useNavigate();
 
@@ -32,7 +33,7 @@ function PasswordReset({ userId }: PasswordResetProps) {
 
   if (emailSent) {
     return (
-      <main className='PasswordReset'>
+      <main className=''>
         <p>
           Check your email for a password reset link, and then{' '}
           <NavLink to='/signin'>sign in</NavLink> with your new password.

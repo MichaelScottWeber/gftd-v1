@@ -33,7 +33,7 @@ function Home({ userId }: HomeProps) {
   }, []);
 
   return (
-    <main className='Home'>
+    <main className=''>
       <h1 className='text-3xl font-bold underline'>This is the Home screen</h1>
       {userId ? <p>Signed in as ID {userId}</p> : ''}
     </main>

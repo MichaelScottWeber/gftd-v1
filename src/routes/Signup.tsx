@@ -5,11 +5,12 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 
-type SignupProps = {
-  userId: string;
-};
+// type SignupProps = {
+//   userId: string;
+// };
 
-function Signup({ userId }: SignupProps) {
+// function Signup({ userId }: SignupProps) {
+function Signup() {
   const navigate = useNavigate();
 
   const [firstName, setFirstName] = useState('');
@@ -48,7 +49,7 @@ function Signup({ userId }: SignupProps) {
   };
 
   return (
-    <main className='Signup'>
+    <main className=''>
       <h1>Signup</h1>
       <form
         onSubmit={(e) => {

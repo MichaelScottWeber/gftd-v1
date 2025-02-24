@@ -40,12 +40,15 @@ function App() {
             // userId ? <Home userId={userId} /> : <Signin userId={userId} />
           }
         />
-        <Route path='/signup' element={<Signup userId={userId} />} />
-        <Route path='/signin' element={<Signin userId={userId} />} />
-        <Route
+        {/* <Route path='/signup' element={<Signup userId={userId} />} /> */}
+        <Route path='/signup' element={<Signup />} />
+        {/* <Route path='/signin' element={<Signin userId={userId} />} /> */}
+        <Route path='/signin' element={<Signin />} />
+        {/* <Route
           path='/password-reset'
           element={<PasswordReset userId={userId} />}
-        />
+        /> */}
+        <Route path='/password-reset' element={<PasswordReset />} />
       </Routes>
     </BrowserRouter>
   );
